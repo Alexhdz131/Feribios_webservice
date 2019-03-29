@@ -4,9 +4,9 @@ import web
 
 db = web.database(
     dbn='mysql',
-    host='localhost',
-    db=  'ferreteria_ahp1',
-    user= 'root',
-    pw='1234',
-    port=3308
+    host='c9cujduvu830eexs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    db=  'yx9f13ur2w1pu1h4',
+    user= 'm2mcsrxtle3tvptv',
+    pw= 'tbf0x0xt3xodg6pe',
+    port=3306
     )
