@@ -1,6 +1,6 @@
-# Author : Salvador Hernandez Mendoza
-# Email  : salvadorhm@gmail.com
-# Twitter: @salvadorhm
+# Author : Alexis Hernandez Perez ,Israel Merida Lopez
+# Email : 1717110754@utectulancingo.edu.mx
+# Twitter: @Alexhdz131
 import web
 import config
 
