@@ -6,7 +6,7 @@ class Edit:
     
     def __init__(self):
         pass
-    #correccion 
+    
 
     def GET(self, id_cliente, **k):
         if app.session.loggedin is True: # validate if the user is logged
