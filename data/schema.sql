@@ -1,6 +1,6 @@
-CREATE DATABASE ferreteria_ahp1;
+CREATE DATABASE feribios;
 
-USE ferreteria_ahp1;
+USE feribios;
 
 CREATE TABLE users(
     username varchar(20) NOT NULL PRIMARY KEY,
@@ -30,19 +30,19 @@ CREATE TABLE logs(
     FOREIGN KEY (username) REFERENCES users(username)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE clientes( 
-    id_cliente integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nombre varchar(30) NOT NULL,
-    apellido_paterno varchar(40) NOT NULL,
-    apellido_materno varchar(40) NOT NULL,
-    telefono varchar(10) NOT NULL,
-    email varchar(50) NOT NULL
+CREATE TABLE evento( 
+    id_evento integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    titulo varchar (30) NOT NULL,
+    descripcion varchar (100) NOT NULL,
+    fecha varchar(20) NOT NULL,
+    hora varchar (15) NOT NULL,
+    ubicacion varchar(50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO clientes(nombre,apellido_paterno,apellido_materno,telefono,email)VALUES
-('Alexis','Hernandez','Perez', '7714563289','alexisher@hotmail.com'),
-('Carlos','Hernandez','Perez', '5512369850','charly14@gmail.com'),
-('Leon','scott','Kennedy', '7751235698','racooncitydom12@gmail.com');
+INSERT INTO evento(titulo,descripcion,fecha,hora,ubicacion)VALUES
+('talent land','encuentro de talentos','22 - 26 de abril','10:00 am', 'resinto de expo de jalisco'),
+('feria del libro','encuentro de autores reconocidos de libros','7 - 10 de abril','09:00 am', 'centro cultural de tulancingo'),
+('proyect','demostracion de proyectos','12 de abril','09:30 am','UTEC Tulancingo');
 
 
 
