@@ -1,17 +1,17 @@
 $def with(clientes)
 <h3>
-    <a href="/clientes">clientes</a>
+    <a href="/clientes">Eventos</a>
 </h3>
 <table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
     <thead>
-        <th>clientes</th>
+        <th>Evento</th>
         <th>Editar</th>
         <th>Borrar</th>
     </thead>
     <tbody>
         $for item in clientes:
         <tr>
-            <td><a href='/clientes/view/$item.id_cliente'>$item.nombre $item.apellido_paterno $item.apellido_materno</a></td>
+            <td><a href='/clientes/view/$item.id_cliente'>$item.titulo</a></td>
             <td><a href='/clientes/edit/$item.id_cliente'><span class="glyphicon glyphicon-pencil"></span></a></td>
             <td><a href='/clientes/delete/$item.id_cliente'><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
