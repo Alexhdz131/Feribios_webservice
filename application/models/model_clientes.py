@@ -51,9 +51,9 @@ titulo=titulo,
 descripcion=descripcion,
 fecha=fecha,
 hora=hora,
-ubicacion=ubicacion
-                  where='id_evento=$id_evento',
-                  vars=locals())
+ubicacion=ubicacion,
+where='id_evento=$id_evento',
+vars=locals())
     except Exception as e:
         print "Model update Error {}".format(e.args)
         print "Model updateMessage {}".format(e.message)

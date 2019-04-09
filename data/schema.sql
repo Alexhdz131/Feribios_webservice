@@ -1,6 +1,6 @@
-CREATE DATABASE feribios;
+CREATE DATABASE craftsystem;
 
-USE feribios;
+USE craftsystem;
 
 CREATE TABLE users(
     username varchar(20) NOT NULL PRIMARY KEY,

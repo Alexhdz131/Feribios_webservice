@@ -13,7 +13,7 @@ class Edit:
             # session_username = app.session.username
             session_privilege = app.session.privilege # get the session_privilege
             if session_privilege == 0: # admin user
-                return self.GET_EDIT(id_cliente) # call GET_EDIT function
+                return self.GET_EDIT(id_evento) # call GET_EDIT function
             elif session_privilege == 1: # guess user
                 raise config.web.seeother('/guess') # render guess.html
         else: # the user dont have logged
@@ -44,7 +44,7 @@ class Edit:
         form = config.web.input()  # get form data
         form['id_evento'] = config.check_secure_val(str(form['id_evento'])) # HMAC id_cliente validate
         # edit user with new data
-        result = config.model.edit_clientes(
+        result = config.model.edit_evento(
             form['id_evento'],form['titulo'],form['descripcion'],form['fecha'],form['hora'],form['ubicacion'],
         )
         if result == None: # Error on udpate data

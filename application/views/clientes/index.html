@@ -1,4 +1,4 @@
-$def with(clientes)
+$def with(evento)
 <h3>
     <a href="/clientes">Eventos</a>
 </h3>
@@ -9,11 +9,11 @@ $def with(clientes)
         <th>Borrar</th>
     </thead>
     <tbody>
-        $for item in clientes:
+        $for item in evento:
         <tr>
-            <td><a href='/clientes/view/$item.id_cliente'>$item.titulo</a></td>
-            <td><a href='/clientes/edit/$item.id_cliente'><span class="glyphicon glyphicon-pencil"></span></a></td>
-            <td><a href='/clientes/delete/$item.id_cliente'><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href='/clientes/view/$item.id_evento'>$item.titulo</a></td>
+            <td><a href='/clientes/edit/$item.id_evento'><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><a href='/clientes/delete/$item.id_evento'><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
     </tbody>
 </table>

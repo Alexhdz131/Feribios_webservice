@@ -38,7 +38,7 @@ class Insert:
         form = config.web.input() # get form data
 
         # call model insert_clientes and try to insert new data
-        config.model.insert_clientes(
+        config.model.insert_evento(
             form['titulo'],form['descripcion'],form['fecha'],form['hora'],form['ubicacion'],
         )
         raise config.web.seeother('/clientes') # render clientes index.html
