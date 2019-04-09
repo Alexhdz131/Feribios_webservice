@@ -21,5 +21,5 @@ class Index:
     def GET_INDEX():
         result = config.model.get_all_clientes().list() # get clientes table list
         for row in result:
-            row.id_cliente = config.make_secure_val(str(row.id_cliente)) # apply HMAC to id_cliente (primary key)
+            row.id_evento = config.make_secure_val(str(row.id_evento)) # apply HMAC to id_cliente (primary key)
         return config.render.index(result) # render clientes index.html

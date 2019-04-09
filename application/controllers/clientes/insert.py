@@ -39,6 +39,6 @@ class Insert:
 
         # call model insert_clientes and try to insert new data
         config.model.insert_clientes(
-            form['nombre'],form['apellido_paterno'],form['apellido_materno'],form['telefono'],form['email'],
+            form['titulo'],form['descripcion'],form['fecha'],form['hora'],form['ubicacion'],
         )
         raise config.web.seeother('/clientes') # render clientes index.html
