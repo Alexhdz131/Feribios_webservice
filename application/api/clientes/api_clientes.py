@@ -4,7 +4,7 @@ import json
 
 
 class Api_clientes:
-    def get(self, id_cliente):
+    def get(self, id_evento):
         try:
             # http://localhost:8080/api_clientes?user_hash=12345&action=get
             if id_evento is None:
@@ -31,7 +31,7 @@ class Api_clientes:
 # http://localhost:8080/api_clientes?user_hash=12345&action=put&id_cliente=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=0
     def put(self, titulo, description, fecha, hora, ubicacion ):
         try:
-            config.model.insert_clientes(titulo, description, fecha, hora, ubicacion)
+            config.model.insert_evento(titulo, description, fecha, hora, ubicacion)
             clientes_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(clientes_json)
@@ -42,7 +42,7 @@ class Api_clientes:
 # http://localhost:8080/api_clientes?user_hash=12345&action=delete&id_cliente=1
     def delete(self, id_evento):
         try:
-            config.model.delete_clientes(id_evento)
+            config.model.delete_evento(id_evento)
             clientes_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(clientes_json)
@@ -53,7 +53,7 @@ class Api_clientes:
 # http://localhost:8080/api_clientes?user_hash=12345&action=update&id_cliente=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=default.jpg
     def update(self, id_evento, titulo, description, fecha, hora, ubicacion):
         try:
-            config.model.edit_clientes(id_evento,titulo,description,fecha,hora,ubicacion)
+            config.model.edit_evento(id_evento,titulo,description,fecha,hora,ubicacion)
             clientes_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(clientes_json)
@@ -72,6 +72,7 @@ class Api_clientes:
             description=None,
             fecha=None,
             hora=None,
+            ubicacion=None,
         )
         try:
             user_hash = user_data.user_hash  # user validation
@@ -85,6 +86,8 @@ class Api_clientes:
             fecha=user_data.fecha
 
             hora=user_data.hora
+
+            ubicacion=user_data.ubicacion
 
             # user_hash
             if user_hash == '12345':
