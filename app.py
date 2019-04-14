@@ -28,6 +28,18 @@ urls = (
     '/clientes/delete/(.+)', 'application.controllers.clientes.delete.Delete',
     '/clientes/insert', 'application.controllers.clientes.insert.Insert',
     '/api_clientes/?', 'application.api.clientes.api_clientes.Api_clientes',
+    '/organizadores', 'application.controllers.organizadores.index.Index',
+    '/organizadores/view/(.+)', 'application.controllers.organizadores.view.View',
+    '/organizadores/edit/(.+)', 'application.controllers.organizadores.edit.Edit',
+    '/organizadores/delete/(.+)', 'application.controllers.organizadores.delete.Delete',
+    '/organizadores/insert', 'application.controllers.organizadores.insert.Insert',
+    '/api_organizadores/?', 'application.api.organizadores.api_organizadores.Api_organizadores',
+    '/ofertas', 'application.controllers.ofertas.index.Index',
+    '/ofertas/view/(.+)', 'application.controllers.ofertas.view.View',
+    '/ofertas/edit/(.+)', 'application.controllers.ofertas.edit.Edit',
+    '/ofertas/delete/(.+)', 'application.controllers.ofertas.delete.Delete',
+    '/ofertas/insert', 'application.controllers.ofertas.insert.Insert',
+    '/api_ofertas/?', 'application.api.ofertas.api_ofertas.Api_ofertas',
 )
 
 app = web.application(urls, globals())
