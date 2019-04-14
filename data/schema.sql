@@ -39,11 +39,37 @@ CREATE TABLE evento(
     ubicacion varchar(50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE organizadores( 
+    id_organizador integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nombre varchar (30) NOT NULL,
+    apellido_paterno varchar (100) NOT NULL,
+    apellido_materno varchar(20) NOT NULL,
+    empresa varchar (15) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE ofertas( 
+    id_oferta integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    des_oferta varchar (50) NOT NULL,
+    num_puesto varchar (50) NOT NULL,
+    nombre_evento varchar(50) NOT NULL,
+    fecha varchar (50) NOT NULL,
+    hora varchar (50) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 INSERT INTO evento(titulo,descripcion,fecha,hora,ubicacion)VALUES
 ('talent land','encuentro de talentos','22 - 26 de abril','10:00 am', 'resinto de expo de jalisco'),
 ('feria del libro','encuentro de autores reconocidos de libros','7 - 10 de abril','09:00 am', 'centro cultural de tulancingo'),
 ('proyect','demostracion de proyectos','12 de abril','09:30 am','UTEC Tulancingo');
 
+INSERT INTO organizadores(nombre,apellido_paterno,apellido_materno,empresa)VALUES
+('mario','palomo','suarez','minter'),
+('pablo','perez','gil','mjhdh'),
+('pedro','aranda','castro','yrfh');
+
+INSERT INTO ofertas(des_oferta,num_puesto,nombre_evento,fecha,hora)VALUES
+('lleva 2 x 1',5,'latent land','22 al 26 de abril','10:00 - 12:00'),
+('lleva 2 x 6',9,'latent land','22 al 26 de abril','10:00 - 10:00'),
+('lleva 2 x 3',6,'latent land','22 al 26 de abril','10:00 - 11:00');
 
 
 INSERT INTO users (username, password, privilege, status, name, email, other_data, user_hash, change_pwd)
