@@ -10,6 +10,7 @@ db = web.database(
     user= 'g9clfaggz1t1r8p6',
     pw= 'ev2ashyxooy7cgls',
     port=3306
+)
 
 """
     
