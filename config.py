@@ -6,9 +6,9 @@ print"conectando"
 db = web.database(
     dbn='mysql',
     host='rtzsaka6vivj2zp1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-    db=  'ufieql1f90kzz50h',
+    db=  'ev2ashyxooy7cgls',
     user= 'g9clfaggz1t1r8p6',
-    pw= 'ev2ashyxooy7cgls',
+    pw= 'gvh3lk3rm3yr5xhw',
     port=3306
 )
 
