@@ -1,5 +1,0 @@
-'/ofertas', 'application.controllers.ofertas.index.Index',
-'/ofertas/view/(.+)', 'application.controllers.ofertas.view.View',
-'/ofertas/edit/(.+)', 'application.controllers.ofertas.edit.Edit',
-'/ofertas/delete/(.+)', 'application.controllers.ofertas.delete.Delete',
-'/ofertas/insert', 'application.controllers.ofertas.insert.Insert',

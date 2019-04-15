@@ -1,5 +1,0 @@
-'/organizadores', 'application.controllers.organizadores.index.Index',
-'/organizadores/view/(.+)', 'application.controllers.organizadores.view.View',
-'/organizadores/edit/(.+)', 'application.controllers.organizadores.edit.Edit',
-'/organizadores/delete/(.+)', 'application.controllers.organizadores.delete.Delete',
-'/organizadores/insert', 'application.controllers.organizadores.insert.Insert',
