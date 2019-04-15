@@ -1,0 +1,1 @@
+'/api_organizadores/?', 'application.api.organizadores.api_organizadores.Api_organizadores',

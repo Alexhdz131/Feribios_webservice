@@ -1,19 +1,19 @@
-$def with(evento)
+$def with(ofertas)
 <h3>
-    <a href="/clientes">Eventos</a>
+    <a href="/ofertas">ofertas</a>
 </h3>
 <table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
     <thead>
-        <th>Evento</th>
-        <th>Editar</th>
-        <th>Borrar</th>
+        <th>ofertas</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </thead>
     <tbody>
-        $for item in evento:
+        $for item in ofertas:
         <tr>
-            <td><a href='/clientes/view/$item.id_evento'>$item.titulo</a></td>
-            <td><a href='/clientes/edit/$item.id_evento'><span class="glyphicon glyphicon-pencil"></span></a></td>
-            <td><a href='/clientes/delete/$item.id_evento'><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href='/ofertas/view/$item.id_oferta'>$item.evento</a></td>
+            <td><a href='/ofertas/edit/$item.id_oferta'><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><a href='/ofertas/delete/$item.id_oferta'><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
     </tbody>
 </table>

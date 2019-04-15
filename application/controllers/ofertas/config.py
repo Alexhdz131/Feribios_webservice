@@ -1,9 +1,9 @@
 import web
 import hmac
-import application.models.model_clientes
+import application.models.model_ofertas
 
-render = web.template.render('application/views/clientes/', base='master')
-model = application.models.model_clientes
+render = web.template.render('application/views/ofertas/', base='master')
+model = application.models.model_ofertas
 
 secret_key = "kuorra_key"
 

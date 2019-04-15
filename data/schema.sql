@@ -49,9 +49,9 @@ CREATE TABLE organizadores(
 
 CREATE TABLE ofertas( 
     id_oferta integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    des_oferta varchar (50) NOT NULL,
-    num_puesto varchar (50) NOT NULL,
-    nombre_evento varchar(50) NOT NULL,
+    descripcion varchar (50) NOT NULL,
+    puesto varchar (50) NOT NULL,
+    evento varchar(50) NOT NULL,
     fecha varchar (50) NOT NULL,
     hora varchar (50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -66,7 +66,7 @@ INSERT INTO organizadores(nombre,apellido_paterno,apellido_materno,empresa)VALUE
 ('pablo','perez','gil','mjhdh'),
 ('pedro','aranda','castro','yrfh');
 
-INSERT INTO ofertas(des_oferta,num_puesto,nombre_evento,fecha,hora)VALUES
+INSERT INTO ofertas(descripcion,puesto,evento,fecha,hora)VALUES
 ('lleva 2 x 1',5,'latent land','22 al 26 de abril','10:00 - 12:00'),
 ('lleva 2 x 6',9,'latent land','22 al 26 de abril','10:00 - 10:00'),
 ('lleva 2 x 3',6,'latent land','22 al 26 de abril','10:00 - 11:00');

@@ -4,56 +4,56 @@ import config
 db = config.db
 
 
-def get_all_clientes():
+def get_all_ofertas():
     try:
-        return db.select('evento')
+        return db.select('ofertas')
     except Exception as e:
         print "Model get all Error {}".format(e.args)
         print "Model get all Message {}".format(e.message)
         return None
 
 
-def get_clientes(id_evento):
+def get_ofertas(id_oferta):
     try:
-        return db.select('evento', where='id_evento=$id_evento', vars=locals())[0]
+        return db.select('ofertas', where='id_oferta=$id_oferta', vars=locals())[0]
     except Exception as e:
         print "Model get Error {}".format(e.args)
         print "Model get Message {}".format(e.message)
         return None
 
 
-def delete_clientes(id_evento):
+def delete_ofertas(id_oferta):
     try:
-        return db.delete('evento', where='id_evento=$id_evento', vars=locals())
+        return db.delete('ofertas', where='id_oferta=$id_oferta', vars=locals())
     except Exception as e:
         print "Model delete Error {}".format(e.args)
         print "Model delete Message {}".format(e.message)
         return None
 
 
-def insert_evento(titulo,descripcion,fecha,hora,ubicacion):
+def insert_ofertas(descripcion,puesto,evento,fecha,hora):
     try:
-        return db.insert('evento',titulo=titulo,
-descripcion=descripcion,
+        return db.insert('ofertas',descripcion=descripcion,
+puesto=puesto,
+evento=evento,
 fecha=fecha,
-hora=hora,
-ubicacion=ubicacion)
+hora=hora)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
         return None
 
 
-def edit_evento(id_evento,titulo,descripcion,fecha,hora,ubicacion):
+def edit_ofertas(id_oferta,descripcion,puesto,evento,fecha,hora):
     try:
-        return db.update('evento',id_evento=id_evento,
-titulo=titulo,
+        return db.update('ofertas',id_oferta=id_oferta,
 descripcion=descripcion,
+puesto=puesto,
+evento=evento,
 fecha=fecha,
 hora=hora,
-ubicacion=ubicacion,
-where='id_evento=$id_evento',
-vars=locals())
+                  where='id_oferta=$id_oferta',
+                  vars=locals())
     except Exception as e:
         print "Model update Error {}".format(e.args)
         print "Model updateMessage {}".format(e.message)

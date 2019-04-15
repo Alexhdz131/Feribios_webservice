@@ -7,6 +7,7 @@ class Insert:
     def __init__(self):
         pass
 
+    '''
     def GET(self):
         if app.session.loggedin is True:
             # session_username = app.session.username
@@ -21,8 +22,8 @@ class Insert:
     def POST(self):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
-            session_privilege = app.session.privilege # get the session_privilege
-            if session_privilege == 0: # admin user
+            session_username = app.session.privilege # get the session_privilege
+            if session_username == 0: # admin user
                 return self.POST_INSERT() # call POST_EDIT function
             elif privilege == 1: # guess user
                 raise config.web.seeother('/guess') # render guess.html
@@ -31,14 +32,19 @@ class Insert:
 
     @staticmethod
     def GET_INSERT():
-        return config.render.insert() # render insert.html
 
     @staticmethod
     def POST_INSERT():
+    '''
+
+    def GET(self):
+        return config.render.insert() # render insert.html
+
+    def POST(self):
         form = config.web.input() # get form data
 
-        # call model insert_clientes and try to insert new data
-        config.model.insert_evento(
-            form['titulo'],form['descripcion'],form['fecha'],form['hora'],form['ubicacion'],
+        # call model insert_organizadores and try to insert new data
+        config.model.insert_organizadores(
+            form['nombre'],form['apellido_paterno'],form['apellido_materno'],form['empresa'],
         )
-        raise config.web.seeother('/clientes') # render clientes index.html
+        raise config.web.seeother('/organizadores') # render organizadores index.html
