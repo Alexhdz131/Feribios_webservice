@@ -3,7 +3,7 @@ CREATE DATABASE craftsystem;
 USE craftsystem;
 
 CREATE TABLE users(
-    username varchar(20) NOT NULL PRIMARY KEY,
+    username varchar(20) PRIMARY KEY,
     password varchar(32) NOT NULL,
     privilege integer NOT NULL DEFAULT -1,
     status integer NOT NULL DEFAULT 1,
@@ -23,7 +23,7 @@ CREATE TABLE sessions(
 
 
 CREATE TABLE logs( 
-    id_log integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_log integer PRIMARY KEY AUTO_INCREMENT,
     username varchar(20) NOT NULL,
     ip varchar(16) NOT NULL,
     access timestamp NOT NULL,
@@ -31,17 +31,17 @@ CREATE TABLE logs(
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE evento(
-    ->     id_evento integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    ->     titulo varchar (30) NOT NULL,
-    ->     descripcion varchar (100) NOT NULL,
-    ->     fecha varchar(20) NOT NULL,
-    ->     hora varchar (15) NOT NULL,
-    ->     ubicacion varchar(50) NOT NULL,
-    ->     organizador varchar(50) NOT NULL
-    -> )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    id_evento integer PRIMARY KEY AUTO_INCREMENT,
+    titulo varchar (30) NOT NULL,
+    descripcion varchar (100) NOT NULL,
+    fecha varchar(20) NOT NULL,
+    hora varchar (15) NOT NULL,
+    ubicacion varchar(50) NOT NULL,
+    organizador varchar(50) NOT NULL
+ )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE organizadores( 
-    id_organizador integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_organizador integer  PRIMARY KEY AUTO_INCREMENT,
     nombre varchar (30) NOT NULL,
     apellido_paterno varchar (100) NOT NULL,
     apellido_materno varchar(20) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE organizadores(
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE ofertas( 
-    id_oferta integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    id_oferta integer PRIMARY KEY AUTO_INCREMENT,
     descripcion varchar (50) NOT NULL,
     puesto varchar (50) NOT NULL,
     evento varchar(50) NOT NULL,
@@ -58,21 +58,21 @@ CREATE TABLE ofertas(
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE ubicacion(
-    ->     id_ubicacion integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    ->     latitud varchar (50) NOT NULL,
-    ->     longitud varchar (50) NOT NULL,
-    ->     evento varchar (50) NOT NULL
-    -> )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+    id_ubicacion integer PRIMARY KEY AUTO_INCREMENT,
+    latitud varchar (50) NOT NULL,
+    longitud varchar (50) NOT NULL,
+    evento varchar (50) NOT NULL
+    )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO evento(titulo,descripcion,fecha,hora,ubicacion,organizador)VALUES
-    -> ('talent land','encuentro de talentos','22 - 26 de abril','10:00 am', 'resinto de expo de jalisco','mario'),
-    -> ('feria del libro','encuentro de autores reconocidos de libros','7 - 10 de abril','09:00 am', 'centro cultural de tulancingo','pablo'),
-    -> ('proyect','demostracion de proyectos','12 de abril','09:30 am','UTEC Tulancingo','pedro');
+ ('talent land','encuentro de talentos','22 - 26 de abril','10:00 am', 'resinto de expo de jalisco','mario'),
+ ('feria del libro','encuentro de autores reconocidos de libros','7 - 10 de abril','09:00 am', 'centro cultural de tulancingo','pablo'),
+ ('proyect','demostracion de proyectos','12 de abril','09:30 am','UTEC Tulancingo','pedro');
 
 INSERT INTO ubicacion(latitud,longitud,evento)VALUES
-    -> ('20.083959 ','-98.363538','feria del elote'),
-    -> ('20.083959 ','-98.363538','feria del guajolote'),
-    -> ('20.083959 ','-98.363538','feria del libro');
+ ('20.083959 ','-98.363538','feria del elote'),
+ ('20.083959 ','-98.363538','feria del guajolote'),
+ ('20.083959 ','-98.363538','feria del libro');
 
 INSERT INTO organizadores(nombre,apellido_paterno,apellido_materno,empresa)VALUES
 ('mario','palomo','suarez','minter'),

@@ -2,7 +2,7 @@ import web
 
 
 
-"""
+
 db = web.database(
     dbn='mysql',
     host='rtzsaka6vivj2zp1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
@@ -21,4 +21,5 @@ db = web.database(
     pw= '1234',
     port=3306
     )
-    
+
+"""
