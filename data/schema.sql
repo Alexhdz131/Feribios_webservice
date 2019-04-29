@@ -30,14 +30,15 @@ CREATE TABLE logs(
     FOREIGN KEY (username) REFERENCES users(username)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE evento( 
-    id_evento integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    titulo varchar (30) NOT NULL,
-    descripcion varchar (100) NOT NULL,
-    fecha varchar(20) NOT NULL,
-    hora varchar (15) NOT NULL,
-    ubicacion varchar(50) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE evento(
+    ->     id_evento integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->     titulo varchar (30) NOT NULL,
+    ->     descripcion varchar (100) NOT NULL,
+    ->     fecha varchar(20) NOT NULL,
+    ->     hora varchar (15) NOT NULL,
+    ->     ubicacion varchar(50) NOT NULL,
+    ->     organizador varchar(50) NOT NULL
+    -> )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE organizadores( 
     id_organizador integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -56,10 +57,22 @@ CREATE TABLE ofertas(
     hora varchar (50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO evento(titulo,descripcion,fecha,hora,ubicacion)VALUES
-('talent land','encuentro de talentos','22 - 26 de abril','10:00 am', 'resinto de expo de jalisco'),
-('feria del libro','encuentro de autores reconocidos de libros','7 - 10 de abril','09:00 am', 'centro cultural de tulancingo'),
-('proyect','demostracion de proyectos','12 de abril','09:30 am','UTEC Tulancingo');
+CREATE TABLE ubicacion(
+    ->     id_ubicacion integer NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ->     latitud varchar (50) NOT NULL,
+    ->     longitud varchar (50) NOT NULL,
+    ->     evento varchar (50) NOT NULL
+    -> )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO evento(titulo,descripcion,fecha,hora,ubicacion,organizador)VALUES
+    -> ('talent land','encuentro de talentos','22 - 26 de abril','10:00 am', 'resinto de expo de jalisco','mario'),
+    -> ('feria del libro','encuentro de autores reconocidos de libros','7 - 10 de abril','09:00 am', 'centro cultural de tulancingo','pablo'),
+    -> ('proyect','demostracion de proyectos','12 de abril','09:30 am','UTEC Tulancingo','pedro');
+
+INSERT INTO ubicacion(latitud,longitud,evento)VALUES
+    -> ('20.083959 ','-98.363538','feria del elote'),
+    -> ('20.083959 ','-98.363538','feria del guajolote'),
+    -> ('20.083959 ','-98.363538','feria del libro');
 
 INSERT INTO organizadores(nombre,apellido_paterno,apellido_materno,empresa)VALUES
 ('mario','palomo','suarez','minter'),

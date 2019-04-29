@@ -1,0 +1,5 @@
+'/ubicacion', 'application.controllers.ubicacion.index.Index',
+'/ubicacion/view/(.+)', 'application.controllers.ubicacion.view.View',
+'/ubicacion/edit/(.+)', 'application.controllers.ubicacion.edit.Edit',
+'/ubicacion/delete/(.+)', 'application.controllers.ubicacion.delete.Delete',
+'/ubicacion/insert', 'application.controllers.ubicacion.insert.Insert',

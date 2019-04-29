@@ -1,0 +1,5 @@
+'/evento', 'application.controllers.evento.index.Index',
+'/evento/view/(.+)', 'application.controllers.evento.view.View',
+'/evento/edit/(.+)', 'application.controllers.evento.edit.Edit',
+'/evento/delete/(.+)', 'application.controllers.evento.delete.Delete',
+'/evento/insert', 'application.controllers.evento.insert.Insert',
